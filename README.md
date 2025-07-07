@@ -244,9 +244,10 @@ By the end of this project, you'll deliver a platform that:
 
 > 💡 *This README is your complete blueprint for building a next-gen, full-stack Cloud Gaming Platform — scalable, innovative, and production-ready.*
 
-If wnnt to learn any tech that is used in this Project there is an link provided in the resources.
+
 
 > From Here there is roadmap for learning for Concuring the project
+- If want to learn any tech that is used in this Project there is an link provided in the resources.
 ## 🧠 Learning Roadmap
 
 > 📚 This roadmap guides MERN developers through the essential skills required to build and scale the Cloud Gaming Platform — from containerization to real-time streaming, automation, and beyond.
