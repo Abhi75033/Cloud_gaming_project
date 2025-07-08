@@ -1,4 +1,4 @@
-# 🎮 Cloud Gaming Platform – README
+# 🎮 Cloud Gaming Platform – Arcadeum
 
 > 🚀 A fully containerized, browser-based cloud gaming solution with support for multiplayer, spectators, and GPU acceleration — built using Docker, WebRTC, React, and AWS.
 
