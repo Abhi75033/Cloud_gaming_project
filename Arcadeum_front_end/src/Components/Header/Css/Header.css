@@ -1,0 +1,258 @@
+/* === Base Header Container === */
+.header-container {
+    background-color: #000;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+}
+
+/* === Inner Flex Layout === */
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* === Logo and Toggle === */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.responsive-logo {
+    height: auto;
+    max-width: 180px;
+}
+
+/* === Navigation Center Links === */
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: #ffc107;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.nav-links li:hover {
+    color: white;
+}
+
+/* === Dropdown Styles === */
+.nav-links li.dropdown {
+    position: relative;
+}
+
+.nav-links li.dropdown .dropdown-wrapper {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    color: black;
+    padding-top: 1rem;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-links li.dropdown:hover .dropdown-wrapper,
+.nav-links li.dropdown:focus-within .dropdown-wrapper {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.dropdown-background {
+    background-color: #000;
+    padding: 0.5rem 0;
+}
+
+.dropdown-box {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(3, 3, 3);
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    gap: 2rem;
+    border: none;
+    min-width: 1200px;
+    max-width: auto;
+}
+
+.dropdown-column {
+    display: flex;
+    flex-direction: column;
+    min-width: auto;
+    max-width: auto;
+    
+}
+
+.dropdown-column h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffc107;
+}
+
+.dropdown-column a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.dropdown-column a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* === Auth Buttons === */
+.nav-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* === Hamburger Toggle === */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .nav-center {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .responsive-logo {
+        max-width: 130px;
+    }
+
+    .btn {
+        padding: 0.3rem 0.6rem;
+    }
+
+    .dropdown-box {
+        flex-direction: column;
+        min-width: 100%;
+    }
+
+    .dropdown-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-logo {
+        max-width: 110px;
+    }
+
+    .btn {
+        font-size: 0.75rem;
+    }
+}
+
+/* === Gradient Divider === */
+hr.gradient {
+    border: none;
+    height: 4px;
+    background-image: linear-gradient(to right, #1ea0f7, #ff0000);
+    border-radius: 2px;
+    margin: 1rem 0;
+}
+
+.gradient {
+    height: 2px;
+    border: none;
+    background: linear-gradient(to right, #f7971e, #ffd200);
+    margin-bottom: 1rem;
+}
